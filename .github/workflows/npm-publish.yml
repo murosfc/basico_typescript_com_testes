@@ -55,6 +55,13 @@ jobs:
 
     # execução:
     steps:
+      # iniciando o script do pipeline
+      - name: Iniciando o workflow
+      - run: |
+          echo "Início do pipeline do github Actions"
+          echo ""
+          echo "..."
+
       # clona o repositório
       - name: Checkout repo
         uses: actions/checkout@v3
