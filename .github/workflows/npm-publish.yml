@@ -12,8 +12,15 @@ on:
 
 jobs:
   pre-build:
+    name: Job de análise, antes do build
+    
     # rodar em um docker ubuntu-latest
     runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
     # configurações
     strategy:
