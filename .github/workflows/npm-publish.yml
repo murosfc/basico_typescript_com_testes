@@ -57,7 +57,7 @@ jobs:
     steps:
       # iniciando o script do pipeline
       - name: Iniciando o workflow
-      - run: |
+        run: |
           echo "Início do pipeline do github Actions"
           echo ""
           echo "..."
@@ -67,16 +67,19 @@ jobs:
         uses: actions/checkout@v3
       
       # instala o node
-      - name: Use Node.js
+      - name: Instalar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
       
       # instala os pacotes
-      - run: npm ci
+      - name: Precisa instalar antes os pacotes npm
+        run: npm ci
       
       # se tiver build, então builda
-      - run: npm run build --if-present
+      - name: se tiver um script build, então execute
+        run: npm run build --if-present
       
       # executa os testes
-      - run: npm test
+      - name: tem obrigatoriamente que executar os testes
+        run: npm test
