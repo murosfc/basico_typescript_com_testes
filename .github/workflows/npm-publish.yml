@@ -11,44 +11,43 @@ on:
 #     - cron: '31 7 * * 3'
 
 jobs:
-  pre-build:
-    name: Job de análise, antes do build
+#   pre-build:
+#     name: Job de análise, antes do build
     
-    # rodar em um docker ubuntu-latest
-    runs-on: ubuntu-latest
+#     # rodar em um docker ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+#     permissions:
+#       actions: read
+#       contents: read
+#       security-events: write
 
-    # configurações
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'TypeScript' ]
-        minha_variavel: ['teste']
-        nome_projeto: ['base para projetos']
+#     # configurações
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         language: [ 'TypeScript' ]
+#         nome_projeto: ['base para projetos']
 
-    # execução:
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+#     # execução:
+#     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v3
       
-      # Initializes the CodeQL tools for scanning.
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: ${{ matrix.language }}
-          source-root: src
+#       # Initializes the CodeQL tools for scanning.
+#       - name: Initialize CodeQL
+#         uses: github/codeql-action/init@v2
+#         with:
+#           languages: ${{ matrix.language }}
+#           source-root: src
           
-      # Autobuild 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
+#       # Autobuild 
+#       - name: Autobuild
+#         uses: github/codeql-action/autobuild@v2
 
-      # executa a análise
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+#       # executa a análise
+#       - name: Perform CodeQL Analysis
+#         uses: github/codeql-action/analyze@v2
 
   build:
     # rodar em um docker ubuntu-latest
