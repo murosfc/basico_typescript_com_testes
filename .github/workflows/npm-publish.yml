@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Node com typescript e testes
 
 on: 
   push:
@@ -7,6 +7,8 @@ on:
   pull_request: 
     # executar quando o pull request for no branch
     branches: [main]
+  release:
+    types: [published]
 #   schedule:
 #     - cron: '31 7 * * 3'
 
