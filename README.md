@@ -1,0 +1,1 @@
+Escolha duas classes com dependência entre si, e crie testes para inversão de dependências entre estas classes.
