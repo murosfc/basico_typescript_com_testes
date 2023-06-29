@@ -1,4 +1,4 @@
-import { Jogo } from '../src/jogo'
+import { Jogo } from './Jogo'
 import { IRepoJogos } from './IRepoJogos'
 
 export class RepoJogos implements IRepoJogos{

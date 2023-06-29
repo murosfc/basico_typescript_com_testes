@@ -1,5 +1,5 @@
-import { IRepoJogos } from "../src/IRepoJogos";
-import { Jogo } from '../src/jogo';
+import { IRepoJogos } from "./IRepoJogos";
+import { Jogo } from './Jogo';
 
 export class ListaJogos {    
     private repo: IRepoJogos;
